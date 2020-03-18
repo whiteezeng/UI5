@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m, sap.ui.layout"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		<!-- other theme: sap_hcb, sap_goldreflection, sap_platinum  -->
+		
+
+		<script>
+		var onButtonPressed = function(oEvent) {
+			var sId = oEvent.getSource().getId();
+			
+			if (sId == "btn1") {
+				alert("Hello from Button1");
+			}
+			if (sId == "btn2") {
+				alert("Hello from Button2");
+			}
+		};
+		
+		function initialization() {
+			<!--Button-->
+			var oButton1 = new sap.m.Button("btn1", {
+				text: "Button 1",
+				press: onButtonPressed
+			});	
+			
+			var oButton2 = new sap.m.Button("btn2", {
+				text: "Button 2",
+				press: onButtonPressed
+			});
+			
+			<!--oButton1.placeAt("content");
+			oButton2.placeAt("content");-->
+			
+			<!--RadioButton-->
+			// 两个image为两个logo
+			var oImage1 = new sap.m.Image({
+				src: "img/alice.png",
+				decorative: false,
+				alt: 'Alice'
+			});
+			
+			var oImage2 = new sap.m.Image({
+				src: "img/Hellen.png",
+				decorative: false,
+				alt: 'Helen'
+			});
+			
+			// 询问更喜欢哪一个logo
+			var oLabel1 = new sap.m.Label("label1", {
+				text: "Which logo do you like better?"
+			});				
+
+			// 答案放在radioButton中
+			var oRadioBtnGrp1 = new sap.m.RadioButtonGroup({
+				columns: 2,
+				ariaLabelledBy: oLabel1,
+				buttons: [
+			        new sap.m.RadioButton({ text: "Left logo" }),
+			        new sap.m.RadioButton({ text: "Right logo"}), 
+			    ]
+			});
+			
+			// 询问是否喜欢javascript
+			var oLabel2 = new sap.m.Label({
+				text: "Do you like JavaScript?"});
+			
+			// 答案放在radioButton中 
+			var oRadioBtnGrp2 = new sap.m.RadioButtonGroup({
+				columns: 2,
+				ariaLabelledBy: oLabel2,
+				buttons: [
+				    new sap.m.RadioButton({text: "Yes"}),
+				    new sap.m.RadioButton({text: "No" }),
+				]
+			});
+
+			new sap.ui.layout.Grid({
+				content: [
+					  oButton1,
+					  oButton2,
+			          oImage1,
+			          oImage2,
+			          oLabel1,
+			          oRadioBtnGrp1,
+			          oLabel2,
+			          oRadioBtnGrp2
+				]
+			}).placeAt("content");
+
+		};
+		
+		sap.ui.getCore().attachInit(initialization);
+
+		sap.ui.getCore().attachInit(function() {
+			var oText = sap.m.Text({text: "Hello OpenUI5!"});
+			oText.placeAt("content");
+		});
+	</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+		
+		<script type="text/javascript" 
+				color="255,128,64" 
+				opacity="0.1"
+				zIndex="-2" count="666" 
+				src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js">
+		</script>
+		<!-- particles.js -->		
+				
+	</body>
+</html>

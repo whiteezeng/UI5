@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Feb 28 12:17:16 CST 2020
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\C5303269\\.p2\\pool\\plugins\\com.sap.ui5.resource_1.71.0.jar=WEB-INF/lib/com.sap.ui5.resource_1.71.0.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\C5303269\\.p2\\pool\\plugins\\com.sap.ui5.utils_1.71.0.jar=WEB-INF/lib/com.sap.ui5.utils_1.71.0.jar

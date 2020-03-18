@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				opacity="0.7"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		<!-- other theme: sap_hcb, sap_goldreflection, sap_platinum  -->
+		
+
+		<script>
+		sap.ui.getCore().attachInit(function() {
+			var oText = sap.m.Text({text: "Hello OpenUI5!"});
+			oText.placeAt("content");
+		});
+		
+		var onButtonPressed = function() {
+			alert("Hello!");
+		};
+		
+		function initialization() {
+			var oButton = new sap.m.Button({
+				text: "Click me.",
+				press: onButtonPressed
+			});				
+			
+			oButton.placeAt("content");
+		};
+		
+		sap.ui.getCore().attachInit(initialization);
+
+	</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+		
+		<script type="text/javascript" 
+				color="250,50,200" 
+				opacity="0.1"
+				zIndex="-10" count="99" 
+				src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js">
+		</script>
+		<!-- particles.js -->		
+				
+	</body>
+</html>
